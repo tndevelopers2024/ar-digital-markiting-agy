@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import { Preloader } from "@/components/Preloader";
 import { LenisProvider } from "@/components/LenisProvider";
 import { CustomCursor } from "@/components/CustomCursor";
+import { ScrollToTop } from "@/components/ScrollToTop";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
@@ -133,6 +134,7 @@ export default function RootLayout({
           {/* Lenis smooth scroll wraps all page content */}
           <LenisProvider>
             {children}
+            <ScrollToTop />
           </LenisProvider>
         </ThemeProvider>
       </body>
