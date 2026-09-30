@@ -48,7 +48,7 @@ export function ProcessSection() {
                       </span>
                     </div>
 
-                    {/* Step Visual Image Banner with Squad Badge */}
+                    {/* Step Visual Image Banner */}
                     {step.image && (
                       <div className="relative aspect-[16/9] w-full mb-5 overflow-hidden rounded-xl border border-border-subtle/80 bg-slate-950/5 shadow-xs">
                         <Image
@@ -58,16 +58,6 @@ export function ProcessSection() {
                           sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
                           className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                         />
-                        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent opacity-80 group-hover:opacity-70 transition-opacity" />
-                        
-                        {step.squad && (
-                          <div className="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between pointer-events-none">
-                            <span className="inline-flex items-center gap-1.5 rounded-full bg-slate-950/85 backdrop-blur-md px-2.5 py-1 text-[10px] font-mono font-semibold text-white/95 border border-white/15 shadow-sm">
-                              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                              {step.squad}
-                            </span>
-                          </div>
-                        )}
                       </div>
                     )}
 
