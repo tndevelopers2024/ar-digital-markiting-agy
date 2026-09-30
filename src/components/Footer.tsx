@@ -247,7 +247,7 @@ export function Footer() {
       {/* ════════════════════════════════════════════════════════════
           1. HEROIC BRAND SIGNATURE & CALL TO ACTION
       ════════════════════════════════════════════════════════════ */}
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20 sm:pt-28 pb-16">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-8 sm:pt-10 lg:pt-12 pb-16">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           {/* Eyebrow pill */}
           <div

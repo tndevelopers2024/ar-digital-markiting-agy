@@ -33,7 +33,7 @@ export function ServicesSection({ onSelectService }: ServicesSectionProps) {
   };
 
   return (
-    <section id="services" className="relative py-12 sm:py-16 lg:py-20">
+    <section id="services" className="relative py-8 sm:py-10 lg:py-12 scroll-mt-20">
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <header className="flex flex-col items-start max-w-3xl mb-10 sm:mb-12">

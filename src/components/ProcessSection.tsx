@@ -5,10 +5,10 @@ export function ProcessSection() {
   const { process } = siteConfig;
 
   return (
-    <section id="process" className="relative py-20 sm:py-28 lg:py-36">
+    <section id="process" className="relative py-8 sm:py-10 lg:py-12 scroll-mt-20">
       <div className="mx-auto max-w-[1536px] 2xl:max-w-[1600px] px-4 sm:px-6 lg:px-8 xl:px-12">
         {/* Section Header */}
-        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16 sm:mb-24">
+        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-10 sm:mb-12">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border-subtle bg-white dark:bg-surface px-3 py-1 shadow-xs">
             <span className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-brand-blue">
               {process.subheading}

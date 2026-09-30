@@ -65,7 +65,7 @@ export function AboutSection() {
     <section
       id="about"
       aria-labelledby="about-heading"
-      className="relative overflow-hidden scroll-mt-28 py-8 sm:py-12 text-ink selection:bg-brand-blue/10"
+      className="relative overflow-hidden scroll-mt-28 py-6 sm:py-8 lg:py-10 text-ink selection:bg-brand-blue/10"
     >
       {/* Subtle ambient background glow & grid accents */}
       <div

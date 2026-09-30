@@ -11,7 +11,7 @@ export function ClientsSection() {
   const row3 = [...items.slice(16, 24), ...items.slice(16, 24)];
 
   return (
-    <section id="clients" className="relative py-12 sm:py-16 overflow-hidden">
+    <section id="clients" className="relative py-8 sm:py-10 lg:py-12 overflow-hidden scroll-mt-20">
       {/* Subtle background texture matching site */}
       <div className="absolute inset-0 bg-warm-white" aria-hidden="true" />
       
