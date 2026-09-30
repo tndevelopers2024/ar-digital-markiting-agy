@@ -250,7 +250,7 @@ export function InquirySection({ initialServiceId }: InquirySectionProps) {
                       setFormData({ ...formData, name: e.target.value });
                       if (errors.name) setErrors({ ...errors, name: undefined });
                     }}
-                    placeholder="Jane Doe"
+                    placeholder="Your full name"
                     className={`w-full rounded-xl border bg-warm-white px-4 py-3 text-sm text-ink placeholder:text-slate-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-blue transition-all ${
                       errors.name ? "border-brand-red ring-1 ring-brand-red" : "border-border-subtle"
                     }`}
@@ -279,7 +279,7 @@ export function InquirySection({ initialServiceId }: InquirySectionProps) {
                       setFormData({ ...formData, email: e.target.value });
                       if (errors.email) setErrors({ ...errors, email: undefined });
                     }}
-                    placeholder="jane@company.com"
+                    placeholder="your@email.com"
                     className={`w-full rounded-xl border bg-warm-white px-4 py-3 text-sm text-ink placeholder:text-slate-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-blue transition-all ${
                       errors.email ? "border-brand-red ring-1 ring-brand-red" : "border-border-subtle"
                     }`}
@@ -305,7 +305,7 @@ export function InquirySection({ initialServiceId }: InquirySectionProps) {
                   type="text"
                   value={formData.businessName}
                   onChange={(e) => setFormData({ ...formData, businessName: e.target.value })}
-                  placeholder="Acme Enterprises or website URL"
+                  placeholder="Your business name or website URL"
                   className="w-full rounded-xl border border-border-subtle bg-warm-white px-4 py-3 text-sm text-ink placeholder:text-slate-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-blue transition-all"
                 />
               </div>
@@ -328,7 +328,7 @@ export function InquirySection({ initialServiceId }: InquirySectionProps) {
                     setFormData({ ...formData, message: e.target.value });
                     if (errors.message) setErrors({ ...errors, message: undefined });
                   }}
-                  placeholder="Tell us about your current challenges, target audience, and what you aim to achieve..."
+                  placeholder="Briefly describe your project, goals, or what you need help with..."
                   className={`w-full rounded-xl border bg-warm-white px-4 py-3 text-sm text-ink placeholder:text-slate-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-blue transition-all resize-y ${
                     errors.message ? "border-brand-red ring-1 ring-brand-red" : "border-border-subtle"
                   }`}
