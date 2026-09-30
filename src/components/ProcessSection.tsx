@@ -50,7 +50,7 @@ export function ProcessSection() {
 
                     {/* Step Visual Image Banner */}
                     {step.image && (
-                      <div className="relative aspect-[16/9] w-full mb-5 overflow-hidden rounded-xl border border-border-subtle/80 bg-slate-950/5 shadow-xs">
+                      <div className="relative aspect-[16/9] w-full mb-5 overflow-hidden rounded-xl border border-border-subtle/60 dark:border-white/10 bg-slate-100 dark:bg-white/5 shadow-xs">
                         <Image
                           src={step.image}
                           alt={step.imageAlt || `${step.title} - ${step.shortDesc}`}

@@ -258,7 +258,7 @@ export const siteConfig: SiteConfig = {
         details:
           "We examine your current brand positioning, existing marketing assets, customer touchpoints, and immediate commercial objectives to establish an honest baseline.",
         image: "/images/process/process_discover_audit.jpg",
-        imageAlt: "Phase 1: Discover - Brand audit, data nodes and strategic baseline alignment",
+        imageAlt: "Phase 1: Discover - Minimalist brand audit wireframe structure with translucent prism on clean porcelain surface",
         squad: "Audit & Intelligence Squad",
       },
       {
@@ -268,7 +268,7 @@ export const siteConfig: SiteConfig = {
         details:
           "We outline a focused roadmap detailing priority channels, messaging angles, resource allocation, and key milestones so expectations are clear from day one.",
         image: "/images/process/process_plan_strategy.jpg",
-        imageAlt: "Phase 2: Plan - Strategic roadmap, 3D pathway milestones and architectural blueprint",
+        imageAlt: "Phase 2: Plan - Minimalist strategic roadmap with geometric modular blocks, paper milestones, and architectural tools",
         squad: "Strategy & Architecture Squad",
       },
       {
@@ -278,7 +278,7 @@ export const siteConfig: SiteConfig = {
         details:
           "Our team develops production-ready visual assets, refines campaign copy, configures tracking pixels, and launches your initiatives with rigorous QA.",
         image: "/images/process/process_create_launch.jpg",
-        imageAlt: "Phase 3: Create & Launch - Campaign production, high-velocity creative execution and launch",
+        imageAlt: "Phase 3: Create & Launch - Minimalist aerodynamic sculpture on pedestal symbolizing campaign takeoff and creative launch",
         squad: "Production & Creative Squad",
       },
       {
@@ -288,7 +288,7 @@ export const siteConfig: SiteConfig = {
         details:
           "We monitor performance signals, evaluate response rates, identify conversion friction, and iterate systematically to maximize your marketing return over time.",
         image: "/images/process/process_measure_improve.jpg",
-        imageAlt: "Phase 4: Measure & Improve - Real-time performance analytics, growth trajectory and continuous refinement",
+        imageAlt: "Phase 4: Measure & Improve - Minimalist frosted glass growth columns and ascending trajectory ribbon",
         squad: "Analytics & Growth Squad",
       },
     ],
