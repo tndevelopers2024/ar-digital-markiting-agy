@@ -32,5 +32,36 @@ test.describe("Page Health & Core Accessibility", () => {
     await themeToggleLight.click();
     await expect(html).not.toHaveClass(/dark/);
   });
+
+  test("serves authentic AR brand favicon and icon resources with 200 OK", async ({ page, request }) => {
+    await page.goto("/");
+
+    // Verify favicon link tags in DOM
+    const iconLinks = await page.locator('link[rel="icon"]').all();
+    expect(iconLinks.length).toBeGreaterThan(0);
+
+    for (const link of iconLinks) {
+      const href = await link.getAttribute("href");
+      expect(href).not.toContain("whatsapp");
+    }
+
+    // Verify apple touch icon does not contain whatsapp
+    const appleIcon = page.locator('link[rel="apple-touch-icon"]');
+    if ((await appleIcon.count()) > 0) {
+      const appleHref = await appleIcon.getAttribute("href");
+      expect(appleHref).not.toContain("whatsapp");
+    }
+
+    // Direct HTTP status verification for favicon & icon assets
+    const [favRes, iconRes, appleRes] = await Promise.all([
+      request.get("/favicon.ico"),
+      request.get("/icon.svg"),
+      request.get("/apple-icon.png"),
+    ]);
+
+    expect(favRes.status()).toBe(200);
+    expect(iconRes.status()).toBe(200);
+    expect(appleRes.status()).toBe(200);
+  });
 });
 

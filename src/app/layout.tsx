@@ -44,10 +44,10 @@ export const metadata: Metadata = {
   publisher: "AR Digital Marketing",
   icons: {
     icon: [
-      { url: "/logo/whatsapp-favicon.svg", type: "image/svg+xml" },
+      { url: "/icon.svg", type: "image/svg+xml" },
       { url: "/favicon.ico", sizes: "any" },
     ],
-    apple: "/logo/whatsapp-favicon.svg",
+    apple: "/apple-icon.png",
   },
   openGraph: {
     type: "website",
