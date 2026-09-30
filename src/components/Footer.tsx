@@ -9,10 +9,7 @@ import {
   ArrowUpRight,
   ArrowUp,
   Check,
-  Copy,
-  Mail,
   Send,
-  MessageCircle,
 } from "lucide-react";
 
 /* ─── Scroll-reveal hook (IntersectionObserver, GPU-safe) ───────── */
@@ -183,19 +180,6 @@ export function Footer() {
   const footerRef = useScrollReveal();
   const [email, setEmail] = useState("");
   const [subStatus, setSubStatus] = useState<"idle" | "ok" | "err">("idle");
-  const [copied, setCopied] = useState(false);
-
-  const handleCopyEmail = async () => {
-    try {
-      await navigator.clipboard.writeText(footer.email);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2400);
-    } catch {
-      // Fallback
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2400);
-    }
-  };
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
@@ -245,106 +229,9 @@ export function Footer() {
       />
 
       {/* ════════════════════════════════════════════════════════════
-          1. HEROIC BRAND SIGNATURE & CALL TO ACTION
+          1. KINETIC TICKER MARQUEE RIBBON
       ════════════════════════════════════════════════════════════ */}
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-8 sm:pt-10 lg:pt-12 pb-16">
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-          {/* Eyebrow pill */}
-          <div
-            data-reveal
-            data-delay="0"
-            className="inline-flex items-center gap-2.5 rounded-full border border-border-subtle bg-white/70 dark:bg-surface/70 px-4 py-1.5 shadow-[0_2px_12px_rgba(0,0,0,0.03)] backdrop-blur-md mb-8"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-            </span>
-            <span className="font-mono text-[10px] font-bold tracking-[0.22em] uppercase text-ink">
-              Agency Availability // Q4 &amp; Q1 Openings
-            </span>
-          </div>
-
-          {/* Architectural Bold Typography */}
-          <div data-reveal data-delay="80" className="space-y-3">
-            <h2 className="font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-ink leading-[1.04] text-balance">
-              Make your brand{" "}
-              <span className="block text-brand-blue">
-                impossible to ignore.
-              </span>
-            </h2>
-            <p className="max-w-2xl mx-auto text-[15px] sm:text-base text-ink-muted leading-relaxed pt-2">
-              We partner with ambitious leaders to engineer high-velocity digital marketing,
-              authoritative search rankings, and category-defining visual brands.
-            </p>
-          </div>
-
-          {/* Double-Bezel Action Command Deck */}
-          <div
-            data-reveal
-            data-delay="160"
-            className="mt-10 flex flex-wrap items-center justify-center gap-3 sm:gap-4 w-full"
-          >
-            {/* Primary Action Button (Double-bezel island) */}
-            <div className="rounded-full p-1 bg-ink/5 dark:bg-white/5 border border-border-subtle shadow-sm transition-transform duration-300 hover:scale-[1.02] active:scale-[0.98]">
-              <MagneticButton
-                as={Link}
-                href="/contact"
-                className="group relative inline-flex items-center gap-3 rounded-full bg-ink px-7 py-3 text-[13px] font-bold text-warm-white transition-all duration-300 hover:bg-brand-blue"
-              >
-                <span>Initiate Partnership</span>
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/15 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-0.5">
-                  <ArrowUpRight className="h-3.5 w-3.5" />
-                </span>
-              </MagneticButton>
-            </div>
-
-            {/* Direct Email with Quick-Copy */}
-            <div className="rounded-full p-1 bg-ink/5 dark:bg-white/5 border border-border-subtle shadow-sm">
-              <div className="inline-flex items-center gap-2 rounded-full bg-white dark:bg-surface px-4 py-2 border border-border-subtle/60 text-[13px]">
-                <Mail className="h-4 w-4 text-brand-blue" />
-                <a
-                  href={`mailto:${footer.email}`}
-                  className="font-medium text-ink hover:text-brand-blue transition-colors"
-                >
-                  {footer.email}
-                </a>
-                <button
-                  type="button"
-                  onClick={handleCopyEmail}
-                  aria-label="Copy agency email address"
-                  className="ml-1 p-1 rounded-full text-ink-muted hover:text-brand-blue hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
-                  title="Copy email"
-                >
-                  {copied ? (
-                    <Check className="h-3.5 w-3.5 text-emerald-600" />
-                  ) : (
-                    <Copy className="h-3.5 w-3.5" />
-                  )}
-                </button>
-              </div>
-            </div>
-
-            {/* WhatsApp Direct Chat */}
-            <div className="rounded-full p-1 bg-ink/5 dark:bg-white/5 border border-border-subtle shadow-sm transition-transform duration-300 hover:scale-[1.02] active:scale-[0.98]">
-              <MagneticButton
-                as="a"
-                href="https://wa.me/91XXXXXXXXXX"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2.5 rounded-full bg-white dark:bg-surface px-5 py-3 text-[13px] font-semibold text-ink border border-border-subtle/80 hover:border-emerald-500/40 hover:text-emerald-600 transition-all duration-300"
-              >
-                <MessageCircle className="h-4 w-4 text-emerald-500 transition-transform duration-300 group-hover:scale-110" />
-                <span>WhatsApp Direct</span>
-              </MagneticButton>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* ════════════════════════════════════════════════════════════
-          2. KINETIC TICKER MARQUEE RIBBON
-      ════════════════════════════════════════════════════════════ */}
-      <div className="group relative w-full overflow-hidden border-y border-border-subtle/70 bg-black/[0.015] dark:bg-white/[0.015] py-3.5 select-none">
+      <div className="group relative w-full overflow-hidden border-b border-border-subtle/70 bg-black/[0.015] dark:bg-white/[0.015] py-3.5 select-none">
         <div className="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-28 bg-gradient-to-r from-warm-white to-transparent z-10" />
         <div className="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-28 bg-gradient-to-l from-warm-white to-transparent z-10" />
 
@@ -369,7 +256,7 @@ export function Footer() {
       </div>
 
       {/* ════════════════════════════════════════════════════════════
-          3. 4-COLUMN ELEVATED DIRECTORY & DISPATCH GRID
+          2. 4-COLUMN ELEVATED DIRECTORY & DISPATCH GRID
       ════════════════════════════════════════════════════════════ */}
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 pb-12">
         {/* Giant architectural watermark in background */}
@@ -498,7 +385,7 @@ export function Footer() {
       </div>
 
       {/* ════════════════════════════════════════════════════════════
-          4. EXECUTIVE BOTTOM BAR
+          3. EXECUTIVE BOTTOM BAR
       ════════════════════════════════════════════════════════════ */}
       <div className="relative border-t border-border-subtle/80 bg-white/40 dark:bg-surface/40 backdrop-blur-md">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">

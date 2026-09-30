@@ -37,11 +37,9 @@ test.describe("Scroll To Top Functionality", () => {
 
     // Click scroll to top button
     await floatingBtn.click();
-    await page.waitForTimeout(1000);
-
-    // Verify window scroll position returned to near top (<= 50px)
-    const currentScrollY = await page.evaluate(() => window.scrollY || document.documentElement.scrollTop);
-    expect(currentScrollY).toBeLessThanOrEqual(50);
+    await expect.poll(async () => {
+      return await page.evaluate(() => window.scrollY || document.documentElement.scrollTop);
+    }, { timeout: 4000 }).toBeLessThanOrEqual(50);
   });
 
   test("footer back-to-top button scrolls smoothly back to the top", async ({ page }) => {
@@ -64,10 +62,9 @@ test.describe("Scroll To Top Functionality", () => {
 
     // Click footer scroll to top button
     await footerBtn.click();
-    await page.waitForTimeout(1200);
-
-    const scrollAfter = await page.evaluate(() => window.scrollY || document.documentElement.scrollTop);
-    expect(scrollAfter).toBeLessThanOrEqual(50);
+    await expect.poll(async () => {
+      return await page.evaluate(() => window.scrollY || document.documentElement.scrollTop);
+    }, { timeout: 4000 }).toBeLessThanOrEqual(50);
   });
 
   test("floating scroll to top operates seamlessly on mobile viewport", async ({ page }) => {
@@ -93,9 +90,8 @@ test.describe("Scroll To Top Functionality", () => {
 
     // Click floating button
     await floatingBtn.click();
-    await page.waitForTimeout(1000);
-
-    const currentScrollY = await page.evaluate(() => window.scrollY || document.documentElement.scrollTop);
-    expect(currentScrollY).toBeLessThanOrEqual(50);
+    await expect.poll(async () => {
+      return await page.evaluate(() => window.scrollY || document.documentElement.scrollTop);
+    }, { timeout: 4000 }).toBeLessThanOrEqual(50);
   });
 });

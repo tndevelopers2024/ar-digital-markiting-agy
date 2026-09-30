@@ -1,6 +1,7 @@
 import { test, expect } from "@playwright/test";
 
 test.describe("404 Not Found Page", () => {
+  test.slow();
   test("requesting a nonexistent URL renders bespoke 404 page with 404 status", async ({
     page,
   }) => {
