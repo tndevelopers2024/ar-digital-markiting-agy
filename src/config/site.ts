@@ -24,6 +24,9 @@ export interface ProcessStep {
   title: string;
   shortDesc: string;
   details: string;
+  image?: string;
+  imageAlt?: string;
+  squad?: string;
 }
 
 export interface FaqItem {
@@ -254,6 +257,9 @@ export const siteConfig: SiteConfig = {
         shortDesc: "Audit & Alignment",
         details:
           "We examine your current brand positioning, existing marketing assets, customer touchpoints, and immediate commercial objectives to establish an honest baseline.",
+        image: "/images/process/process_discover_audit.jpg",
+        imageAlt: "Phase 1: Discover - Brand audit, data nodes and strategic baseline alignment",
+        squad: "Audit & Intelligence Squad",
       },
       {
         number: "02",
@@ -261,6 +267,9 @@ export const siteConfig: SiteConfig = {
         shortDesc: "Roadmap & Strategy",
         details:
           "We outline a focused roadmap detailing priority channels, messaging angles, resource allocation, and key milestones so expectations are clear from day one.",
+        image: "/images/process/process_plan_strategy.jpg",
+        imageAlt: "Phase 2: Plan - Strategic roadmap, 3D pathway milestones and architectural blueprint",
+        squad: "Strategy & Architecture Squad",
       },
       {
         number: "03",
@@ -268,6 +277,9 @@ export const siteConfig: SiteConfig = {
         shortDesc: "Production & Deployment",
         details:
           "Our team develops production-ready visual assets, refines campaign copy, configures tracking pixels, and launches your initiatives with rigorous QA.",
+        image: "/images/process/process_create_launch.jpg",
+        imageAlt: "Phase 3: Create & Launch - Campaign production, high-velocity creative execution and launch",
+        squad: "Production & Creative Squad",
       },
       {
         number: "04",
@@ -275,6 +287,9 @@ export const siteConfig: SiteConfig = {
         shortDesc: "Review & Refinement",
         details:
           "We monitor performance signals, evaluate response rates, identify conversion friction, and iterate systematically to maximize your marketing return over time.",
+        image: "/images/process/process_measure_improve.jpg",
+        imageAlt: "Phase 4: Measure & Improve - Real-time performance analytics, growth trajectory and continuous refinement",
+        squad: "Analytics & Growth Squad",
       },
     ],
   },

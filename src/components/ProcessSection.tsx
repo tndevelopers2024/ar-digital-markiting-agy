@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { siteConfig } from "@/config/site";
 
 export function ProcessSection() {
@@ -8,7 +9,7 @@ export function ProcessSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16 sm:mb-24">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border-subtle bg-white px-3 py-1 shadow-xs">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border-subtle bg-white dark:bg-surface px-3 py-1 shadow-xs">
             <span className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-brand-blue">
               {process.subheading}
             </span>
@@ -25,7 +26,7 @@ export function ProcessSection() {
         <div className="relative">
           {/* Desktop Horizontal Connecting Line */}
           <div
-            className="hidden lg:block absolute top-[52px] left-[8%] right-[8%] h-[2px] bg-gradient-to-r from-brand-blue/30 via-brand-red/30 to-brand-blue/30 -z-0"
+            className="hidden lg:block absolute top-[48px] left-[10%] right-[10%] h-[2px] bg-gradient-to-r from-brand-blue/30 via-brand-red/30 to-brand-blue/30 -z-0"
             aria-hidden="true"
           />
 
@@ -33,19 +34,42 @@ export function ProcessSection() {
             {process.steps.map((step, idx) => (
               <div
                 key={step.number}
-                className="group relative flex flex-col rounded-[2rem] p-2 bg-black/[0.025] ring-1 ring-black/[0.04] transition-all duration-300 hover:bg-black/[0.04] hover:shadow-md"
+                className="group relative flex flex-col rounded-[2rem] p-2 bg-black/[0.025] dark:bg-white/[0.02] ring-1 ring-black/[0.04] dark:ring-white/[0.06] transition-all duration-300 hover:bg-black/[0.04] dark:hover:bg-white/[0.04] hover:shadow-xl"
               >
-                <div className="flex flex-col justify-between h-full rounded-[calc(2rem-0.5rem)] border border-border-subtle bg-white p-6 sm:p-7 transition-all">
+                <div className="flex flex-col justify-between h-full rounded-[calc(2rem-0.5rem)] border border-border-subtle bg-white dark:bg-surface p-5 sm:p-6 transition-all duration-300 group-hover:border-brand-blue/40">
                   <div>
                     {/* Step Icon / Number Indicator */}
-                    <div className="flex items-center justify-between mb-6">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-warm-white border border-border-subtle font-mono text-sm font-bold text-ink shadow-xs group-hover:bg-brand-blue group-hover:text-white transition-colors duration-200">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-warm-white dark:bg-white/5 border border-border-subtle font-mono text-sm font-bold text-ink shadow-xs group-hover:bg-brand-blue group-hover:text-white transition-colors duration-200">
                         {step.number}
                       </div>
-                      <span className="font-mono text-[10px] uppercase tracking-wider text-slate-muted font-semibold bg-warm-white px-2.5 py-1 rounded-full border border-border-subtle">
+                      <span className="font-mono text-[10px] uppercase tracking-wider text-slate-muted font-semibold bg-warm-white dark:bg-white/5 px-2.5 py-1 rounded-full border border-border-subtle">
                         Phase 0{idx + 1}
                       </span>
                     </div>
+
+                    {/* Step Visual Image Banner with Squad Badge */}
+                    {step.image && (
+                      <div className="relative aspect-[16/9] w-full mb-5 overflow-hidden rounded-xl border border-border-subtle/80 bg-slate-950/5 shadow-xs">
+                        <Image
+                          src={step.image}
+                          alt={step.imageAlt || `${step.title} - ${step.shortDesc}`}
+                          fill
+                          sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
+                          className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                        />
+                        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent opacity-80 group-hover:opacity-70 transition-opacity" />
+                        
+                        {step.squad && (
+                          <div className="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between pointer-events-none">
+                            <span className="inline-flex items-center gap-1.5 rounded-full bg-slate-950/85 backdrop-blur-md px-2.5 py-1 text-[10px] font-mono font-semibold text-white/95 border border-white/15 shadow-sm">
+                              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                              {step.squad}
+                            </span>
+                          </div>
+                        )}
+                      </div>
+                    )}
 
                     {/* Step Title & Subtitle */}
                     <h3 className="font-display text-lg sm:text-xl font-bold tracking-tight text-ink group-hover:text-brand-blue transition-colors duration-200">
@@ -56,16 +80,19 @@ export function ProcessSection() {
                     </p>
 
                     {/* Details */}
-                    <p className="mt-4 text-xs sm:text-sm text-slate-muted leading-relaxed">
+                    <p className="mt-3.5 text-xs sm:text-sm text-slate-muted leading-relaxed">
                       {step.details}
                     </p>
                   </div>
 
                   {/* Bottom Milestone Tag */}
                   <div className="mt-6 pt-4 border-t border-border-subtle/80 flex items-center justify-between text-[11px] font-mono text-slate-muted">
-                    <span>Deliverable ready</span>
+                    <span className="inline-flex items-center gap-1.5 font-medium">
+                      <span className="h-1.5 w-1.5 rounded-full bg-brand-blue" />
+                      Deliverable ready
+                    </span>
                     <svg
-                      className="h-3.5 w-3.5 text-brand-blue group-hover:translate-x-1 transition-transform"
+                      className="h-3.5 w-3.5 text-brand-blue group-hover:translate-x-1 transition-transform duration-200"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
