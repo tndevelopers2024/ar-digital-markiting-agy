@@ -35,28 +35,28 @@ const bottomCards = [
     icon: Layers,
     title: "One team for everything",
     description:
-      "No coordinating between five disconnected vendors — SEO, paid ads, web development, copywriting, and visual design managed under one unified roof.",
+      "Full-funnel SEO, paid ads, web development, and creative execution managed under one unified roof.",
   },
   {
     number: "03",
     icon: Building2,
     title: "We've worked across industries",
     description:
-      "Healthcare, education, real estate, B2B SaaS, e-commerce, professional services — adapting strategies to how distinct buyers make decisions.",
+      "Proven growth strategies tailored to buyer psychology across SaaS, e-commerce, healthcare, and B2B.",
   },
   {
     number: "04",
     icon: Globe,
     title: "Global client base",
     description:
-      "We've delivered growth campaigns across India and international markets, adapting to regional consumer habits and global ad compliance.",
+      "Scalable growth campaigns deployed across India and global markets, tuned for regional scale and compliance.",
   },
   {
     number: "05",
     icon: LifeBuoy,
     title: "Support doesn't stop at launch",
     description:
-      "We stay on as your long-term growth partner, continuously running A/B tests, refining keywords, tuning ad spend, and compounding your returns.",
+      "Continuous post-launch optimization — ongoing A/B testing, keyword tuning, and budget management to compound ROI.",
   },
 ];
 
@@ -102,18 +102,11 @@ export function AboutSection() {
           {/* Narrative & Action Links Grid */}
           <div className="mt-8 sm:mt-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
             {/* Left Editorial Narrative */}
-            <div className="lg:col-span-8 space-y-4 text-white/85 text-base sm:text-lg leading-relaxed font-normal">
+            <div className="lg:col-span-8 text-white/85 text-base sm:text-lg leading-relaxed font-normal">
               <p>
-                AR Digital Marketing is a premier performance and growth agency. For over 8 years,
-                we&apos;ve helped businesses — from ambitious founders to established industry
-                leaders — turn ideas into high-converting customer acquisition systems, search
-                engine dominance, and measurable revenue.
-              </p>
-              <p>
-                We started as a focused growth team and have evolved into a full-funnel digital
-                partner. What hasn&apos;t changed is our approach: understand the business first, then
-                engineer the creative and acquisition strategy around it. Here is why clients
-                choose us:
+                For over 8 years, AR Digital Marketing has engineered full-funnel acquisition systems
+                that turn search visibility and performance creative into predictable revenue. We align
+                with your business goals first, then deploy the strategy to scale them.
               </p>
             </div>
 
@@ -181,9 +174,8 @@ export function AboutSection() {
                   We speak your language, not just marketing jargon
                 </h3>
                 <p className="mt-3.5 sm:mt-4 text-white/75 text-sm sm:text-base leading-relaxed max-w-2xl">
-                  You&apos;ll always understand what we&apos;re building, launching, and why —
-                  plain-English explanations, real-time transparent dashboards, and commercially
-                  grounded strategy before spending a single ad dollar.
+                  Clear commercial priorities, plain-English strategy, and real-time transparent
+                  dashboards before spending a single ad dollar.
                 </p>
               </div>
             </div>
@@ -196,7 +188,7 @@ export function AboutSection() {
               return (
                 <div
                   key={card.number}
-                  className="rounded-2xl sm:rounded-3xl bg-white/[0.06] border border-white/[0.08] backdrop-blur-md p-7 sm:p-8 flex flex-col justify-between hover:border-white/20 hover:bg-white/[0.1] transition-all duration-300 shadow-xl group min-h-[250px] sm:min-h-[270px]"
+                  className="rounded-2xl sm:rounded-3xl bg-white/[0.06] border border-white/[0.08] backdrop-blur-md p-7 sm:p-8 flex flex-col justify-between hover:border-white/20 hover:bg-white/[0.1] transition-all duration-300 shadow-xl group min-h-[220px] sm:min-h-[240px]"
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 border border-white/20 text-sky-200 shadow-[0_0_15px_rgba(99,102,241,0.15)] group-hover:scale-105 group-hover:border-white/40 transition-all duration-300">
