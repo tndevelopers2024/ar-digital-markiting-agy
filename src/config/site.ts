@@ -11,6 +11,8 @@ export interface ServiceItem {
   description: string;
   deliverables: string[];
   accentColor: "blue" | "red";
+  image?: string;
+  imageAlt?: string;
 }
 
 export interface AboutPrinciple {
@@ -135,6 +137,8 @@ export const siteConfig: SiteConfig = {
       tagline: "Be discovered by high-intent local and national customers.",
       description:
         "We build clean technical foundations, high-value local citations, and focused content architectures that earn organic rankings and sustainable visibility.",
+      image: "/images/services/service_seo_light.jpg",
+      imageAlt: "Service 01: SEO & Local Search - Minimalist frosted glass loupe and high-intent discovery path across porcelain map tiles",
       deliverables: [
         "Technical site audits and speed tuning",
         "Local map pack and citation optimization",
@@ -150,6 +154,8 @@ export const siteConfig: SiteConfig = {
       tagline: "Turn passive followers into an active, loyal community.",
       description:
         "Consistent, brand-aligned visual storytelling and platform-specific messaging designed to spark engagement, build trust, and keep your company top of mind.",
+      image: "/images/services/service_social_light.jpg",
+      imageAlt: "Service 02: Social Media Marketing - Minimalist ceramic speech bubbles with interlocking frosted glass links and coral accents",
       deliverables: [
         "Channel positioning and monthly content calendars",
         "Creative asset production and copywriting",
@@ -165,6 +171,8 @@ export const siteConfig: SiteConfig = {
       tagline: "High-precision traffic engineered for measurable returns.",
       description:
         "Targeted search and social campaigns built around realistic unit economics. We eliminate ad waste through disciplined audience testing and conversion-focused creative.",
+      image: "/images/services/service_ads_light.jpg",
+      imageAlt: "Service 03: Paid Advertising - Minimalist concentric target plinth with precision trajectory arrow and refraction prism",
       deliverables: [
         "Google Search and Meta campaign architecture",
         "Audience segmentation and retargeting funnels",
@@ -180,6 +188,8 @@ export const siteConfig: SiteConfig = {
       tagline: "Distinctive identities that command authority from day one.",
       description:
         "Visual identities, design systems, and marketing collateral that communicate quality instantly and ensure every customer touchpoint reflects your standards.",
+      image: "/images/services/service_branding_light.jpg",
+      imageAlt: "Service 04: Branding & Graphic Design - Minimalist ceramic design sculpture, acrylic swatch chips, and drafting caliper",
       deliverables: [
         "Logo lockups, typography, and color systems",
         "Brand style guidelines and vector assets",
@@ -195,6 +205,8 @@ export const siteConfig: SiteConfig = {
       tagline: "Fast, modern web properties built to convert visitors into inquiries.",
       description:
         "Responsive, performance-tuned web pages engineered for clarity and user action. We prioritize lightning-fast load times, clean semantics, and effortless inquiry flows.",
+      image: "/images/services/service_web_light.jpg",
+      imageAlt: "Service 05: Website & Landing Page Development - Minimalist architectural wireframe structure with translucent prism on clean porcelain surface",
       deliverables: [
         "Modern responsive layouts optimized for mobile",
         "High-converting landing page copywriting",
@@ -210,6 +222,8 @@ export const siteConfig: SiteConfig = {
       tagline: "Compelling narratives that answer questions and earn decisions.",
       description:
         "Educational articles, case studies, and engaging short-form video that position your team as industry leaders while addressing direct customer questions.",
+      image: "/images/services/service_content_light.jpg",
+      imageAlt: "Service 06: Content & Video Marketing - Minimalist editorial accordion layout, publication blocks, and precision drafting divider",
       deliverables: [
         "Content strategy and editorial planning",
         "Short-form video concepts and editing",

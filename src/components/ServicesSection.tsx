@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { siteConfig, ServiceItem } from "@/config/site";
 import { useServiceContext } from "./ServiceContext";
 import { MagneticButton } from '@/components/ui/magnetic-button';
@@ -77,6 +78,19 @@ export function ServicesSection({ onSelectService }: ServicesSectionProps) {
                           {isBlue ? "Growth" : "Creative"}
                         </span>
                       </div>
+
+                      {/* Service Visual Image Banner - Minimal Studio 16:9 Aesthetic */}
+                      {service.image && (
+                        <div className="relative aspect-[16/9] w-full mb-5 overflow-hidden rounded-2xl border border-border-subtle/80 bg-slate-100 shadow-xs group-hover:shadow-md transition-shadow duration-300">
+                          <Image
+                            src={service.image}
+                            alt={service.imageAlt || `${service.title} - ${service.tagline}`}
+                            fill
+                            sizes="(min-width: 1280px) 380px, (min-width: 768px) 50vw, 100vw"
+                            className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                          />
+                        </div>
+                      )}
 
                       {/* Title & Tagline */}
                       <h3 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-ink group-hover:text-brand-blue transition-colors duration-200">
