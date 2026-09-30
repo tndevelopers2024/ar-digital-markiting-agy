@@ -344,15 +344,25 @@ export function Footer() {
       {/* ════════════════════════════════════════════════════════════
           2. KINETIC TICKER MARQUEE RIBBON
       ════════════════════════════════════════════════════════════ */}
-      <div className="relative w-full overflow-hidden border-y border-border-subtle/70 bg-black/[0.015] dark:bg-white/[0.015] py-3.5">
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-warm-white to-transparent z-10" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-warm-white to-transparent z-10" />
+      <div className="group relative w-full overflow-hidden border-y border-border-subtle/70 bg-black/[0.015] dark:bg-white/[0.015] py-3.5 select-none">
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-28 bg-gradient-to-r from-warm-white to-transparent z-10" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-28 bg-gradient-to-l from-warm-white to-transparent z-10" />
 
-        <div className="flex w-max animate-marquee-left whitespace-nowrap text-[11px] font-mono font-bold uppercase tracking-[0.24em] text-ink/40">
-          {[...marqueeItems, ...marqueeItems].map((item, idx) => (
+        <div
+          className="flex w-max animate-marquee-left hover:[animation-play-state:paused] group-hover:[animation-play-state:paused] whitespace-nowrap text-[11px] font-mono font-bold uppercase tracking-[0.24em] text-ink/50 dark:text-ink/60 cursor-default"
+          style={{ animationDuration: "45s" }}
+        >
+          {[
+            ...marqueeItems,
+            ...marqueeItems,
+            ...marqueeItems,
+            ...marqueeItems,
+            ...marqueeItems,
+            ...marqueeItems,
+          ].map((item, idx) => (
             <span key={idx} className="inline-flex items-center gap-6 px-6">
               <span>{item}</span>
-              <span className="text-brand-blue text-[10px]">✦</span>
+              <span className="text-brand-blue text-[10px]" aria-hidden="true">✦</span>
             </span>
           ))}
         </div>

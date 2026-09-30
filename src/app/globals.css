@@ -212,20 +212,22 @@ html[data-preloader="skip"] .ar-preloader {
   }
 }
 
-/* ── Clients Marquee ───────────────────────────────────────── */
+/* ── Infinite Marquee Tickers ───────────────────────────────── */
 @keyframes marqueeLeft {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
 }
 @keyframes marqueeRight {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
+  0% { transform: translate3d(-50%, 0, 0); }
+  100% { transform: translate3d(0, 0, 0); }
 }
 .animate-marquee-left {
-  animation: marqueeLeft linear infinite;
+  animation: marqueeLeft 35s linear infinite;
+  will-change: transform;
 }
 .animate-marquee-right {
-  animation: marqueeRight linear infinite;
+  animation: marqueeRight 35s linear infinite;
+  will-change: transform;
 }
 @media (prefers-reduced-motion: reduce) {
   .animate-marquee-left,

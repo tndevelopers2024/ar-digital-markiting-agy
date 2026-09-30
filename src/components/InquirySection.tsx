@@ -107,7 +107,7 @@ export function InquirySection({ initialServiceId }: InquirySectionProps) {
   const mailtoUrl = `mailto:${footer.email}?subject=${mailtoSubject}&body=${mailtoBody}`;
 
   return (
-    <section id="inquiry" className="relative py-20 sm:py-28 lg:py-36">
+    <section id="inquiry" className="relative pt-4 pb-20 sm:pt-6 sm:pb-28 lg:pt-8 lg:pb-36">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         {/* Double-Bezel Form Container */}
         <div className="rounded-[2.5rem] p-2 bg-black/[0.03] ring-1 ring-black/[0.05] shadow-sm">

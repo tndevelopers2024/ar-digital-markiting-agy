@@ -22,7 +22,7 @@ export function FaqSection() {
   };
 
   return (
-    <section id="faqs" className="relative py-20 sm:py-28 lg:py-36 border-t border-border-subtle bg-white/50">
+    <section id="faqs" className="relative pt-20 pb-8 sm:pt-28 sm:pb-10 lg:pt-36 lg:pb-12 border-t border-border-subtle bg-white/50">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16 sm:mb-20">
