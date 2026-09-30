@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
@@ -10,15 +10,25 @@ import ImmersiveFullscreenNav, { FullscreenNav, CustomNavbar } from "@/component
 import { ThemeToggle } from "./ThemeToggle";
 
 export interface HeaderProps {
-  variant?: "standard" | "immersive";
+  variant?: "standard" | "immersive" | "overlay";
 }
 
 export function Header({ variant = "standard" }: HeaderProps = {}) {
+  const isOverlay = variant === "overlay";
+  const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [immersiveMenuOpen, setImmersiveMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [activeService, setActiveService] = useState<string | null>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    if (!isOverlay) return;
+    const updateScrolled = () => setScrolled(window.scrollY > 24);
+    updateScrolled();
+    window.addEventListener("scroll", updateScrolled, { passive: true });
+    return () => window.removeEventListener("scroll", updateScrolled);
+  }, [isOverlay]);
 
   if (variant === "immersive") {
     return (
@@ -55,7 +65,7 @@ export function Header({ variant = "standard" }: HeaderProps = {}) {
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full border-b border-border-subtle bg-warm-white/90 backdrop-blur-md transition-colors duration-200">
+      <header className={`top-0 z-50 w-full border-b transition-[background-color,border-color,backdrop-filter] duration-200 ${isOverlay ? scrolled ? "fixed border-white/40 bg-white/70 backdrop-blur-md" : "fixed border-transparent bg-transparent backdrop-blur-none" : "sticky border-border-subtle bg-warm-white/90 backdrop-blur-md"}`}>
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           {/* Logo */}
           <Link
@@ -75,10 +85,10 @@ export function Header({ variant = "standard" }: HeaderProps = {}) {
               />
             </div>
             <div className="flex flex-col">
-              <span className="font-display text-base sm:text-lg font-extrabold tracking-tight text-ink leading-tight">
+              <span className={`font-display text-base sm:text-lg font-extrabold tracking-tight leading-tight ${isOverlay ? "text-slate-900" : "text-ink"}`}>
                 AR <span className="text-brand-blue">MARKETING</span>
               </span>
-              <span className="text-[10px] uppercase tracking-[0.24em] font-medium text-slate-muted">
+              <span className={`text-[10px] uppercase tracking-[0.24em] font-medium ${isOverlay ? "text-slate-600" : "text-slate-muted"}`}>
                 Digital Agency
               </span>
             </div>
@@ -105,7 +115,9 @@ export function Header({ variant = "standard" }: HeaderProps = {}) {
                       className={`inline-flex items-center gap-1.5 rounded-full px-4 py-2 font-display text-sm font-medium transition-all duration-200 focus-visible:outline-2 focus-visible:outline-brand-blue ${
                         servicesOpen
                           ? "bg-ink text-white"
-                          : "text-slate-muted hover:text-ink border border-transparent hover:border-border-subtle hover:bg-white"
+                          : isOverlay
+                            ? "text-slate-700 hover:text-slate-950 border border-transparent hover:border-white/60 hover:bg-white/60"
+                            : "text-slate-muted hover:text-ink border border-transparent hover:border-border-subtle hover:bg-white"
                       }`}
                     >
                       Services
@@ -207,7 +219,7 @@ export function Header({ variant = "standard" }: HeaderProps = {}) {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="font-display text-sm font-medium text-slate-muted transition-colors duration-200 hover:text-ink focus-visible:outline-2 focus-visible:outline-brand-blue rounded-md px-3 py-2"
+                  className={`font-display text-sm font-medium transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-brand-blue rounded-md px-3 py-2 ${isOverlay ? "text-slate-700 hover:text-slate-950" : "text-slate-muted hover:text-ink"}`}
                 >
                   {item.label}
                 </Link>

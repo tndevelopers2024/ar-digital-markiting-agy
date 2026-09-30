@@ -117,6 +117,7 @@ export const siteConfig: SiteConfig = {
     "Websites",
   ],
   navLinks: [
+    { label: "Home", href: "/" },
     { label: "Services", href: "#services" },
     { label: "About", href: "/about" },
     { label: "Process", href: "#process" },

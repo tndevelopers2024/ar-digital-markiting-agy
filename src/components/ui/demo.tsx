@@ -26,7 +26,7 @@ export default function Demo(props: Partial<typeof settings>) {
       className="bg-warm-white text-ink transition-colors duration-300"
       style={{ width: "100%", background: "var(--warm-white)", color: "var(--ink)", containerType: "inline-size", fontFamily: face ?? "Arial, sans-serif" }}>
       <style>{`
-        [data-slipstream-demo] [data-gp-pin]{background:linear-gradient(180deg,rgba(6,14,25,.35),rgba(6,14,25,.55)),url('/images/hero-bg.jpg') center/cover no-repeat;}
+        [data-slipstream-demo] [data-gp-pin]{background:linear-gradient(180deg,rgba(240,246,255,.72),rgba(240,246,255,.62)),url('/images/hero-digital-marketing.webp') center/cover no-repeat;}
         [data-slipstream-demo] [data-gp-caption]{inset:calc(var(--gp-word-bottom,50%) + 82px) 24px auto;justify-content:center;}
         [data-slipstream-demo] [data-gp-hint]{display:none;}
         [data-slipstream-demo] [data-gp-enter]{min-height:46px;padding:0 22px;gap:24px;background:#2858A5;border:1px solid #204684;border-radius:10px;color:#fff;font-size:13px;font-weight:600;box-shadow:none;transition:background .2s,border-color .2s;}
@@ -35,11 +35,11 @@ export default function Demo(props: Partial<typeof settings>) {
         [data-slipstream-demo] [data-gp-touch-picker]{top:auto;bottom:18px;left:50%;}
         [data-slipstream-demo] [data-gp-select]{border:1px solid var(--border-subtle);border-radius:8px;font-size:12px;color:var(--ink);background:var(--surface);}
         [data-slipstream-demo] [data-gp-letter]{appearance:none;-webkit-appearance:none;border:none!important;background:transparent!important;box-shadow:none!important;outline:none!important;}
-        [data-sublime-eyebrow]{position:absolute;inset:auto 24px calc(100% - var(--gp-word-top,35%) + 32px);margin:0;text-align:center;font-size:13px;font-weight:400;line-height:1.5;letter-spacing:.005em;color:rgba(255,255,255,.85);}
-        [data-sublime-support]{position:absolute;inset:calc(var(--gp-word-bottom,50%) + 32px) 24px auto;margin:0;text-align:center;font-size:16px;font-weight:400;line-height:1.5;color:rgba(255,255,255,.9);}
-        [data-sublime-scroll]{position:absolute;inset:auto 24px 7%;text-align:center;color:rgba(255,255,255,.75);font-size:11px;letter-spacing:.02em;}
+        [data-sublime-eyebrow]{position:absolute;inset:auto 24px calc(100% - var(--gp-word-top,35%) + 32px);margin:0;text-align:center;font-size:13px;font-weight:400;line-height:1.5;letter-spacing:.005em;color:#213653;}
+        [data-sublime-support]{position:absolute;inset:calc(var(--gp-word-bottom,50%) + 32px) 24px auto;margin:0;text-align:center;font-size:16px;font-weight:400;line-height:1.5;color:#213653;}
+        [data-sublime-scroll]{position:absolute;inset:auto 24px 7%;text-align:center;color:#213653;font-size:11px;letter-spacing:.02em;}
         @media(any-pointer:coarse){[data-sublime-scroll]{bottom:13%;}}
-        @container(max-width:450px){[data-sublime-eyebrow]{font-size:12px;}[data-sublime-support]{font-size:14px;}[data-slipstream-demo] [data-gp-caption]{top:calc(var(--gp-word-bottom,50%) + 76px);}}
+        @container(max-width:450px){[data-slipstream-demo] [data-gp-pin]{background-position:right center;}[data-sublime-eyebrow]{font-size:12px;}[data-sublime-support]{font-size:14px;}[data-slipstream-demo] [data-gp-caption]{top:calc(var(--gp-word-bottom,50%) + 76px);}}
         @container(max-height:479px){[data-sublime-support]{top:calc(var(--gp-word-bottom,50%) + 16px);}[data-slipstream-demo] [data-gp-caption]{top:calc(var(--gp-word-bottom,50%) + 60px);}[data-sublime-scroll]{display:none;}}
         [data-slipstream-demo] [data-gp-content]{padding:clamp(3.5rem,6vh,5rem) clamp(1.25rem,4cqw,4.5rem);font-family:inherit;background:#2858A5!important;}
         [data-slipstream-demo] section,[data-slipstream-demo] [data-gp-caption]{font-family:inherit;}
@@ -66,7 +66,7 @@ export default function Demo(props: Partial<typeof settings>) {
               style={{
                 position: "absolute",
                 inset: 0,
-                background: "linear-gradient(135deg, #d5e5ff, #80adef)",
+                background: "linear-gradient(135deg, #2858a5, #193969)",
               }}
             />
           }
