@@ -6,7 +6,7 @@ export function ProcessSection() {
 
   return (
     <section id="process" className="relative py-20 sm:py-28 lg:py-36">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[1536px] 2xl:max-w-[1600px] px-4 sm:px-6 lg:px-8 xl:px-12">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16 sm:mb-24">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border-subtle bg-white dark:bg-surface px-3 py-1 shadow-xs">
@@ -26,20 +26,20 @@ export function ProcessSection() {
         <div className="relative">
           {/* Desktop Horizontal Connecting Line */}
           <div
-            className="hidden lg:block absolute top-[50px] left-[10%] right-[10%] h-[2px] bg-gradient-to-r from-brand-blue/30 via-brand-red/30 to-brand-blue/30 -z-0"
+            className="hidden lg:block absolute top-[54px] left-[8%] right-[8%] h-[2px] bg-gradient-to-r from-brand-blue/30 via-brand-red/30 to-brand-blue/30 -z-0"
             aria-hidden="true"
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-6 xl:gap-7 relative z-10">
             {process.steps.map((step, idx) => (
               <div
                 key={step.number}
-                className="group relative flex flex-col rounded-[2rem] p-2 bg-black/[0.025] dark:bg-white/[0.02] ring-1 ring-black/[0.04] dark:ring-white/[0.06] transition-all duration-300 hover:bg-black/[0.04] dark:hover:bg-white/[0.04] hover:shadow-xl"
+                className="group relative flex flex-col rounded-[2rem] p-2 sm:p-2.5 bg-black/[0.025] dark:bg-white/[0.02] ring-1 ring-black/[0.04] dark:ring-white/[0.06] transition-all duration-300 hover:bg-black/[0.04] dark:hover:bg-white/[0.04] hover:shadow-xl hover:-translate-y-1"
               >
-                <div className="flex flex-col justify-between h-full rounded-[calc(2rem-0.5rem)] border border-border-subtle bg-white dark:bg-surface p-5 sm:p-5.5 lg:p-5 transition-all duration-300 group-hover:border-brand-blue/40">
+                <div className="flex flex-col justify-between h-full rounded-[calc(2rem-0.5rem)] border border-border-subtle bg-white dark:bg-surface p-5 sm:p-6 lg:p-6 transition-all duration-300 group-hover:border-brand-blue/40">
                   <div>
                     {/* Step Icon / Number Indicator */}
-                    <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center justify-between mb-5">
                       <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-warm-white dark:bg-white/5 border border-border-subtle font-mono text-sm font-bold text-ink shadow-xs group-hover:bg-brand-blue group-hover:text-white group-hover:border-brand-blue transition-colors duration-200">
                         {step.number}
                       </div>
@@ -50,12 +50,12 @@ export function ProcessSection() {
 
                     {/* Step Visual Image Banner - Prominent 4:3 Aspect Ratio */}
                     {step.image && (
-                      <div className="relative aspect-[4/3] w-full min-h-[190px] sm:min-h-[220px] mb-5 overflow-hidden rounded-2xl border border-border-subtle/80 dark:border-white/10 bg-slate-100 dark:bg-white/5 shadow-xs group-hover:shadow-md transition-shadow duration-300">
+                      <div className="relative aspect-[4/3] w-full mb-5 overflow-hidden rounded-2xl border border-border-subtle/80 dark:border-white/10 bg-slate-100 dark:bg-white/5 shadow-xs group-hover:shadow-md transition-shadow duration-300">
                         <Image
                           src={step.image}
                           alt={step.imageAlt || `${step.title} - ${step.shortDesc}`}
                           fill
-                          sizes="(min-width: 1280px) 320px, (min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
+                          sizes="(min-width: 1536px) 380px, (min-width: 1280px) 340px, (min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
                           className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-108"
                         />
                       </div>
